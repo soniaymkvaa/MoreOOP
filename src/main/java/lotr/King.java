@@ -1,13 +1,16 @@
 package lotr;
 
-import java.util.Random;
+public class King extends Character {
+    public King() {
+        super(random.nextInt(10) + 5, random.nextInt(10) + 5);
+    }
 
-public class King extends Character{
-    public King() {super(new Random().nextInt(11) + 5, new Random().nextInt(11)+5);}
-
-
-    @Override
     public void kick(Character c) {
-        c.setHp(c.getHp()-new Random().nextInt(getPower()));
+        c.setHp(c.getHp() - random.nextInt(getPower()));
+    }
+
+    public String toString() {
+        String var10000 = this.getClass().getSimpleName();
+        return "King{hp=" + getHp() + ", power=" + getPower() + "}";
     }
 }

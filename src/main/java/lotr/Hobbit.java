@@ -1,13 +1,15 @@
 package lotr;
-
-public class Hobbit extends Character{
+public class Hobbit extends Character {
     public Hobbit() {
-        super(3,0);
+        super(0, 3);
     }
 
-
-    @Override
     public void kick(Character c) {
-        System.out.println("...");
+        System.out.println("'cries'");
+    }
+
+    public String toString() {
+        String var10000 = this.getClass().getSimpleName();
+        return "Hobbit{hp=" + getHp() + ", power=" + getPower() + "}";
     }
 }

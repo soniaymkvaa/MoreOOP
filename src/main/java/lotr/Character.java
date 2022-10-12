@@ -1,29 +1,43 @@
 package lotr;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import java.util.Random;
 
-@AllArgsConstructor
 public abstract class Character {
-    @Getter
-    private int hp;
-    @Getter @Setter
+    public static Random random = new Random();
     private int power;
+    private int hp;
+    public Character(int power, int hp) {
+        this.power = power;
+        this.hp = hp;
+    }
+
+    public boolean isAlive() {
+        return this.getHp() > 0;
+    }
+
+    public int getHp() {
+        return this.hp;
+    }
 
     public void setHp(int hp) {
-        this.hp = Math.max(hp, 0);
+//        int updated = hp - power;
+//        this.hp = Math.max(updated, 0);
+        this.hp = hp < 0 ? 0 : hp;
     }
-    public boolean isAlive() {
-        return getHp() > 0;
-    }
+
     public abstract void kick(Character c);
 
-    @Override
-    public String toString() {
-        return this.getClass().getSimpleName() + "{" +
-                "hp=" + hp +
-                ", power=" + power +
-                "}";
+    public int getPower() {
+        return this.power;
     }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
+//    public String toString() {
+//        String var10000 = this.getClass().getSimpleName();
+//        return getClass() + "{hp=" + this.hp + ", power=" + this.power + "}";
+//        //return var10000 + "{hp=" + this.hp + ", power=" + this.power + "}";
+//    }
 }
