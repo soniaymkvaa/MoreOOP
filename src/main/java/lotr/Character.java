@@ -20,8 +20,6 @@ public abstract class Character {
     }
 
     public void setHp(int hp) {
-//        int updated = hp - power;
-//        this.hp = Math.max(updated, 0);
         this.hp = hp < 0 ? 0 : hp;
     }
 
@@ -34,10 +32,4 @@ public abstract class Character {
     public void setPower(int power) {
         this.power = power;
     }
-
-//    public String toString() {
-//        String var10000 = this.getClass().getSimpleName();
-//        return getClass() + "{hp=" + this.hp + ", power=" + this.power + "}";
-//        //return var10000 + "{hp=" + this.hp + ", power=" + this.power + "}";
-//    }
 }
